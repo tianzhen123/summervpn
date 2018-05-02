@@ -1,0 +1,17 @@
+{
+    "name": "summervpn",
+    "version": "1.0.0",
+    "description": "cordova vpn for cordova plugin",
+    "cordova": {
+        "id": "cordova-plugin-summervpn",
+        "platforms": [
+            "ios",
+            "android"
+        ]
+    },
+    "engines": [{
+        "name": "cordova",
+        "version": ">=3.0"
+    }]
+
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-summervpn" version="1.0.0">
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <name>summervpn</name>
+    <author>jiangzy</author>
+    <description>Plugin to integrate with the summervpn library.</description>
+    <license>Apache 2.0</license>
+    <keywords>summervpn</keywords>
+    <js-module src="www/summervpn.js" name="summervpn">
+        <clobbers target="SummerVpn" />
+    </js-module>
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="SummerVpn">
+                <param name="ios-package" value="CDVSummerVpnPlugin"/>
+            </feature>
+        </config-file>
+        
+        <!-- config.xml -->
+        
+        <header-file src="src/ios/CDVSummerVpnPlugin.h" />
+        <header-file src="src/ios/SangforAuthHeader.h" />
+        <header-file src="src/ios/SangforAuthManager.h" />
+        
+        <source-file src="src/ios/CDVSummerVpnPlugin.m" />
+        <source-file src="src/ios/libSangforSdk.a" framework="true" custom="true"/>
+        
+        <!-- 依赖库 -->
+        <framework src="MobileCoreServices.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="NetworkExtension.framework" />
+        <framework src="AdSupport.framework" />
+        <framework src="Security.framework" />
+        <framework src="libsqlite3.0.tbd" />
+        <framework src="libicucore.tbd" />
+        <framework src="libxml2.tbd" />
+        <framework src="libc++.tbd" />
+        <framework src="libresolv.9.tbd" />
+    </platform>
+
+</plugin>
